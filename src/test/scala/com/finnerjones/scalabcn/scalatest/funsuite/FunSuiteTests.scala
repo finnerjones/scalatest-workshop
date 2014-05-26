@@ -1,8 +1,9 @@
 package com.finnerjones.scalabcn.scalatest.funsuite
 
 import org.scalatest.FunSuite
-
 import com.finnerjones.scalabcn.scalatest.s99.S99Solutions._
+import org.scalatest.Matchers
+import org.scalatest.BeforeAndAfter
 
 /**
  *      FunSuite
@@ -14,11 +15,27 @@ import com.finnerjones.scalabcn.scalatest.s99.S99Solutions._
  * and generates specification-like output that can facilitate communication among stakeholders.
  * http://www.scalatest.org/user_guide/selecting_a_style
  */
+// BeforeAndAfter is a trait 
+//
+// with BeforeAndAfter
+//  var x:Int = _
+//  
+//  before {
+//    x = 1
+//  }
+//  after {
+//    println("something happened after")
+//  }
+
 class FunSuiteTests extends FunSuite {
 
   /*
    *  Coursera like tests 
-   * 
+   *  
+   *  FunSuite =>  Function Suite
+   *  
+   *  http://www.scalatest.org/getting_started_with_fun_suite
+   *  
    */
 
   /*
@@ -49,8 +66,45 @@ class FunSuiteTests extends FunSuite {
    *    
    * The test is for information   
    */
-  test("Scala BCN is the puta madre!!!  --  Rule#1 & Rule#2  :)") {
-    assert(last(List(1, 1, 2, 3, 5, 8)) === 8)	// what when not 8?
+  test("Scala BCN és la millor!!!  --  Rule#1 & Rule#2  :)") {
+    assert(last(List(1, 1, 2, 3, 5, 8)) === 8) // what when not 8?
   }
 
+  /* 
+   * Example 4
+   * 
+   * Dealing with Exceptions
+   */
+  test("I am expecting an IllegalArgumentException here") {
+    intercept[IllegalArgumentException] {
+      throw new Exception // have a look at failed test output
+    }
+  }
+
+  /*
+   * Example 5
+   * 
+   * multiple lines of code with a function and an assert
+   */
+  test("someFunction returns a list containing \'a\' ") {
+    val a: Char = 'a'
+    val l: List[Char] = List(a)
+    def someFunction: List[Char] = l
+    assert(l === someFunction)
+  }
+
+  /*
+   * with BeforeAndAfter examples
+   */
+
+  // Example 5
+  test("""randomSelect(1, List('a', 'b', 'c', 'd')) 
+      returns 1 randomly selected element from 
+      List('a', 'b', 'c', 'd')""") {
+      val l = List('a', 'b', 'c', 'd')
+      // what do we test here ?
+      assert(randomSelect(3, l) === ???)
+  }
+
+  // we need something more.. let's have a look at FlatSpecs
 }

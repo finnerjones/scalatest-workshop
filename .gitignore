@@ -1,9 +1,9 @@
-.metadata
-.settings
-bin/
-target/
-project/
 .cache
 .classpath
 .project
-.git
+.settings/
+submission/
+lib_managed/
+project/
+target/
+/bin
