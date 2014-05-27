@@ -66,7 +66,7 @@ class FunSuiteTests extends FunSuite {
    *    
    * The test is for information   
    */
-  test("Scala BCN és la millor!!!  --  Rule#1 & Rule#2  :)") {
+  test("Scala BCN ï¿½s la millor!!!  --  Rule#1 & Rule#2  :)") {
     assert(last(List(1, 1, 2, 3, 5, 8)) === 8) // what when not 8?
   }
 

@@ -20,7 +20,7 @@ object S99Solutions {
    *  
    *  Example 2
    *  
-   *  P23 (**) Extract a given number of randomly selected elements ç
+   *  P23 (**) Extract a given number of randomly selected elements ï¿½
    *           from a list.
    *
    *    scala> randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
