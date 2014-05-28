@@ -2,8 +2,9 @@ package com.finnerjones.scalabcn.scalatest.flatspec
 
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
-
 import com.finnerjones.scalabcn.scalatest.s99.S99Solutions.last
+import org.scalatest.MustMatchers
+import com.finnerjones.scalabcn.scalatest.custom.matchers.SortedBeMatcher
 
 /**
  * FlatSpec
@@ -13,7 +14,7 @@ import com.finnerjones.scalabcn.scalatest.s99.S99Solutions.last
  * "X should Y," "A must B," etc.
  */
 
-class FlatSpecTests extends FlatSpec with Matchers {
+class FlatSpecTests extends FlatSpec with Matchers with SortedBeMatcher {
 
   /*
    * See also Getting Started
@@ -44,7 +45,7 @@ class FlatSpecTests extends FlatSpec with Matchers {
    * 
    */
   "The value 1" should "equal value 1" in {
-    assert(1 == 2) // compare == with ===
+    assert(1 == 1) // compare == with ===
   }
 
   /*
@@ -82,29 +83,49 @@ class FlatSpecTests extends FlatSpec with Matchers {
    * 
    * This example is loosely taken from the book "Testing in Scala"
    * 
-   * and is very slow !  :o(
+   * and is slow !  :o(
    */
   "All these string matchers" should
     "be valid syntax" in {
 
-      val lyrics = """I fell into a burning ring of fire. 
-		I went down, down, down and the flames went higher"""
+      val lyrics = "I fell into a burning ring of fire"
 
       // checking strings
       lyrics should startWith("I fell")
-      lyrics should endWith("higher")
-      lyrics should not endWith "My favorite friend, the end" // parens?
-      lyrics should include("down, down, down")
+      lyrics should endWith("fire")
+      lyrics should not endWith "the end" 
+      lyrics should include("ring")
       lyrics should not include ("Great balls of fire")
 
       // using regex 
       lyrics should startWith regex ("I.fel+")
-      lyrics should endWith regex ("h.{4}r")
+      lyrics should endWith regex ("""f\w\we""")
       lyrics should not endWith regex("\\d{5}")
-      lyrics should include regex ("flames?")
-      lyrics should fullyMatch regex ("""I(.|\n|\S)*higher""")
-
-      // Can I create a custom Matcher ?
-      // lyrics should be from a Johnny Cash song
+      lyrics should include regex ("burning?")
     }
+  
+  /*
+   * Example 5
+   * 
+   * 
+   */
+
+  "<= => < >" should "result in 8" in {
+    1 should be < 2
+    2 should be > 1
+    2 should be <= 2
+    6 should be >= 5
+  }
+  
+  /*
+   * Example 6
+   * 
+   * Custom BeMatcher
+   */
+  "List(1,2,3,4,5)" should "be sorted" in {
+    val l = List(1,2,3,4,5)
+    l should have length(5)
+    l should be (sorted)
+  }
+  
 }
