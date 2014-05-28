@@ -28,4 +28,15 @@ object S99Solutions {
    */
   def randomSelect(n:Int, l:List[Char]):List[Char] =
     List('a')	// <-  this obviously should be random :o)
+    
+    
+  /*
+   * Example 3
+   * 
+   * P04 (*) Find the number of elements of a list.
+   *
+   *    scala> length(List(1, 1, 2, 3, 5, 8))
+   *    res0: Int = 6
+   */
+  def listLength(l:List[Int]):Int = l.length  
 }
