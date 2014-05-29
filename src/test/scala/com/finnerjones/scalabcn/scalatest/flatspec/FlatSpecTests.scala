@@ -128,4 +128,7 @@ class FlatSpecTests extends FlatSpec with Matchers with SortedBeMatcher {
     l should be (sorted)
   }
   
+  
+  // use base class
+  
 }

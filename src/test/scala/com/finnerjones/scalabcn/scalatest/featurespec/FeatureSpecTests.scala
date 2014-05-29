@@ -23,10 +23,10 @@ class FeatureSpecTests extends FeatureSpec with Matchers {
         result should be (4)
     }
     
-    info("something else is defined")
-    scenario("when I do something else, something else happens") (
-        pending
-    )
+    scenario("passing an empty list to listLength will return 0") {
+      val result = listLength(List())
+      result should equal (0)
+    }
     
   }
   
