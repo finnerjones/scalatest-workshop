@@ -9,10 +9,17 @@ import com.finnerjones.scalabcn.scalatest.s99.S99Solutions._
  * http://www.scalatest.org/getting_started_with_feature_spec
  * 
  * In a FeatureSpec, you describe scenarios of features.
+ * Primarily intended for acceptance testing.
  * 
  */
 class FeatureSpecTests extends FeatureSpec with Matchers {
 
+  /*
+   * Example 1
+   * 
+   * listLength
+   * 
+   */
   feature("a function which returns the length of a list") {
     
     info("As a programmer I need a way to find the length of a list")

@@ -5,6 +5,7 @@ import org.scalatest.Matchers
 import com.finnerjones.scalabcn.scalatest.s99.S99Solutions.last
 import org.scalatest.MustMatchers
 import com.finnerjones.scalabcn.scalatest.custom.matchers.SortedBeMatcher
+import com.finnerjones.scalabcn.scalatest.model.ScalaBcnMeetup
 
 /**
  * FlatSpec
@@ -69,9 +70,20 @@ class FlatSpecTests extends FlatSpec with Matchers with SortedBeMatcher {
    */
   "the Int 12" should "equal 12" in {
     val twelve = 12
-    val another12 = 12
     twelve should equal (12)		// need brackets
     twelve should === (12)
+  }
+  
+  
+  /*
+   * Example 3(a)
+   * 
+   * using it and ignore 
+   * 
+   */
+  it should "equal 12" in {
+    val twelve = 12
+    val another12 = 12
     twelve shouldEqual another12
     twelve shouldBe another12
   }
@@ -79,7 +91,7 @@ class FlatSpecTests extends FlatSpec with Matchers with SortedBeMatcher {
   /*
    * Example 4
    * 
-   * Let's have a look at Matchers
+   * Some more Matchers
    * 
    * This example is loosely taken from the book "Testing in Scala"
    * 
@@ -124,8 +136,25 @@ class FlatSpecTests extends FlatSpec with Matchers with SortedBeMatcher {
    */
   "List(1,2,3,4,5)" should "be sorted" in {
     val l = List(1,2,3,4,5)
-    l should have length(5)
     l should be (sorted)
+    l should have length(5)
+    // show the multiple comparison version using and and braces
+    // l should { be and have}
+  }
+  
+  /*
+   * Example 7
+   * 
+   * testing properties
+   */
+  
+  "ScalaBcnMeetup" should "have location MOB, theme Scalatest and free beer" in {
+    val meetUp = ScalaBcnMeetup("MOB","ScalaTest",true)
+    meetUp should have (
+      'location ("MOB"),
+      'beer (true)
+    )
+    
   }
   
   

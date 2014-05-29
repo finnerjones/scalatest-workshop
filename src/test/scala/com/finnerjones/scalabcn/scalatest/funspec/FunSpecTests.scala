@@ -24,7 +24,11 @@ import scala.collection.mutable.ListBuffer
 
 class FunSpecTests extends FunSpec {
 
-  
+  /*
+   * A good first step for teams 
+   * wishing to move from xUnit to BDD
+   * 
+   */
   /*
    * Example 1
    * 
@@ -32,7 +36,7 @@ class FunSpecTests extends FunSpec {
    */
   describe("the nth java method") {
     
-    it("should be able to make coffee") (pending)
+    it("should be able to make coffee") (pending)	// <- new word
     
     it("is green") (pending)
     

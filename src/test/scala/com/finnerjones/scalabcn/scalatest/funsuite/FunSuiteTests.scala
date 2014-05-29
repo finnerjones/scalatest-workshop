@@ -66,7 +66,7 @@ class FunSuiteTests extends FunSuite {
    *    
    * The test is for information   
    */
-  test("Scala BCN �s la millor!!!  --  Rule#1 & Rule#2  :)") {
+  test("Scala BCN es la millor!!!  --  Rule#1 & Rule#2  :)") {
     assert(last(List(1, 1, 2, 3, 5, 8)) === 8) // what when not 8?
   }
 
@@ -97,7 +97,7 @@ class FunSuiteTests extends FunSuite {
    * with BeforeAndAfter examples
    */
 
-  // Example 5
+  // Example 6
   test("""randomSelect(1, List('a', 'b', 'c', 'd')) 
       returns 1 randomly selected element from 
       List('a', 'b', 'c', 'd')""") {
