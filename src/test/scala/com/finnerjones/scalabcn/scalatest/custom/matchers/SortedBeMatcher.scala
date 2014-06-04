@@ -4,19 +4,19 @@ import org.scalatest.matchers.BeMatcher
 import org.scalatest.matchers.MatchResult
 
 trait SortedBeMatcher {
-	class SortedBeMatcher extends BeMatcher[List[Int]] {
+	class ScalaBcnSortedBeMatcher extends BeMatcher[List[Int]] {
 	  
 	  def apply(left:List[Int]):MatchResult = {
 	    MatchResult(
 	      left == left.sorted,
-	      left.toString + "was sorted",
-	      left.toString + "was not sorted"
+	      left.toString + "was not sorted",
+	      left.toString + "was sorted"
 	    )
 	  }
-	  
-	  val sorted = new SortedBeMatcher
-
 	}
+	
+	def scalaBcnSorted = new ScalaBcnSortedBeMatcher
 }
 
-object SortedBeMatcher extends SortedBeMatcher
+
+object ScalaBcnSortedBeMatcher extends SortedBeMatcher

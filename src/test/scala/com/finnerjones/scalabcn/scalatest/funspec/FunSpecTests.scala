@@ -34,20 +34,20 @@ class FunSpecTests extends FunSpec {
    * 
    * Integrating wit Java
    */
-  describe("the nth java method") {
-    
-    it("should be able to make coffee") (pending)	// <- new word
-    
-    it("is green") (pending)
-    
-    it ("returns the nth indexed element of a list of Integers") {
-      val l: java.util.List[Integer] = ListBuffer(List(new java.lang.Integer(1),new java.lang.Integer(3),new java.lang.Integer(7)): _*)
-      val jSolutions = new S99JavaSolutions();
-      val result = jSolutions.nth(2, l)
-      assert(result == 7)
-    }
-  }
-  
+//  describe("the nth java method") {
+//    
+//    it("should be able to make coffee") (pending)	// <- new word
+//    
+//    it("is green") (pending)
+//    
+//    it ("returns the nth indexed element of a list of Integers") {
+//      val l: java.util.List[Integer] = ListBuffer(List(new java.lang.Integer(1),new java.lang.Integer(3),new java.lang.Integer(7)): _*)
+//      val jSolutions = new S99JavaSolutions();
+//      val result = jSolutions.nth(2, l)
+//      assert(result == 7)
+//    }
+//  }
+//  
   
   
 }
